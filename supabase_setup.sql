@@ -26,3 +26,11 @@ create policy "Anyone can read active alerts"
 create policy "Authenticated users can insert alerts" 
   on public.alerts for insert 
   with check (auth.role() = 'authenticated');
+
+create policy "Authenticated users can update alerts" 
+  on public.alerts for update 
+  using (auth.role() = 'authenticated');
+
+create policy "Authenticated users can delete alerts" 
+  on public.alerts for delete 
+  using (auth.role() = 'authenticated');

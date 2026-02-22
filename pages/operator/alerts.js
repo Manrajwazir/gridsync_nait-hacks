@@ -17,9 +17,26 @@ export default function OperatorAlerts() {
       if (!error && data) setAlerts(data)
     }
     fetchAlerts()
+
+    // Real-time listener to keep the table in sync
+    const channel = supabase
+      .channel('operator:alerts')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'alerts' }, () => {
+        fetchAlerts()
+      })
+      .subscribe()
+
+    return () => supabase.removeChannel(channel)
   }, [])
 
+  const activeAlertCount = alerts.filter(a => a.is_active).length
+
   const sendManualAlert = async () => {
+    if (activeAlertCount > 0) {
+      alert('Error: There is already an active alert. Please cancel the current alert before sending a new one.')
+      return
+    }
+
     setSending(true)
     try {
       const { data, error } = await supabase
@@ -39,6 +56,29 @@ export default function OperatorAlerts() {
     } catch (err) {
       console.error(err)
       alert('Failed to send alert.')
+    } finally {
+      setSending(false)
+    }
+  }
+
+  const cancelActiveAlerts = async () => {
+    if (activeAlertCount === 0) {
+      alert('Cancel won\'t work: There are no currently active alerts.')
+      return
+    }
+
+    setSending(true)
+    try {
+      const { error } = await supabase
+        .from('alerts')
+        .update({ is_active: false })
+        .eq('is_active', true)
+      
+      if (error) throw error
+      alert('All active alerts have been cleared.')
+    } catch (err) {
+      console.error(err)
+      alert('Failed to clear alerts.')
     } finally {
       setSending(false)
     }
@@ -127,25 +167,48 @@ export default function OperatorAlerts() {
         ))}
       </div>
 
-      {/* Send Alert Now */}
-      <button 
-        disabled={sending}
-        onClick={sendManualAlert}
-        style={{
-          background: sending ? '#222' : 'rgba(255, 59, 48, 0.1)',
-          border: '1px solid rgba(255, 59, 48, 0.2)',
-          color: sending ? '#555' : '#ff3b30',
-          padding: '12px 28px',
-          borderRadius: '8px',
-          fontSize: '13px',
-          fontWeight: '600',
-          cursor: sending ? 'default' : 'pointer',
-          marginBottom: '28px',
-          fontFamily: "'Inter', sans-serif",
-          opacity: sending ? 0.6 : 1,
-        }}>
-        {sending ? 'Sending Alert...' : 'Send Manual Alert to All Users'}
-      </button>
+      {/* Alert Controls */}
+      <div style={{ display: 'flex', gap: '16px', marginBottom: '28px' }}>
+        {/* Send Alert Now */}
+        <button 
+          disabled={sending}
+          onClick={sendManualAlert}
+          style={{
+            background: sending ? '#222' : 'rgba(255, 59, 48, 0.1)',
+            border: '1px solid rgba(255, 59, 48, 0.2)',
+            color: sending ? '#555' : '#ff3b30',
+            padding: '12px 28px',
+            borderRadius: '8px',
+            fontSize: '13px',
+            fontWeight: '600',
+            cursor: sending ? 'default' : 'pointer',
+            fontFamily: "'Inter', sans-serif",
+            opacity: sending ? 0.6 : 1,
+            flex: 1,
+          }}>
+          {sending ? 'Sending Alert...' : 'Send Manual Alert to All Users'}
+        </button>
+
+        {/* Cancel Alert */}
+        <button 
+          disabled={sending}
+          onClick={cancelActiveAlerts}
+          style={{
+            background: sending ? '#222' : 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.1)',
+            color: sending ? '#555' : '#ededed',
+            padding: '12px 28px',
+            borderRadius: '8px',
+            fontSize: '13px',
+            fontWeight: '600',
+            cursor: sending ? 'default' : 'pointer',
+            fontFamily: "'Inter', sans-serif",
+            opacity: sending ? 0.6 : 1,
+            flex: 1,
+          }}>
+          {sending ? 'Processing...' : 'Cancel Active Alerts'}
+        </button>
+      </div>
 
       {/* Alert history */}
       <div style={{

@@ -115,12 +115,18 @@ export default function Home() {
     }
     fetchExisting()
 
-    // 2. Subscribe to new alerts
+    // 2. Subscribe to new/updated alerts
     const channel = supabase
       .channel('public:alerts')
-      .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'alerts' }, payload => {
-        if (payload.new.is_active) {
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'alerts' }, payload => {
+        if (payload.new && payload.new.is_active) {
           setActiveAlert(payload.new)
+        } else if (payload.new && !payload.new.is_active) {
+          // If the active alert was deactivated, clear it
+          setActiveAlert(current => {
+            if (current && current.id === payload.new.id) return null
+            return current
+          })
         }
       })
       .subscribe()
