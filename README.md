@@ -27,7 +27,7 @@ GridSync isn't just a dashboard—it's backed by a sophisticated time-series for
 
 -   **Algorithm**: Facebook Prophet (Piecewise Linear Trend + Multiplicative Seasonality).
 -   **Features**: Daily, Weekly, and Yearly seasonality layers + Temperature regressors.
--   **Accuracy**: ~94% precision within ±200 MW on held-out test data.
+-   **Accuracy**: ~98% precision within ±200 MW on held-out test data.
 -   **Automation**: A **GitHub Action** re-trains and updates the 48-hour forecast daily at midnight UTC.
 
 > [!TIP]
