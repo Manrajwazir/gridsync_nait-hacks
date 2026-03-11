@@ -1,8 +1,22 @@
 import pickle, json, requests, pandas as pd
 from datetime import datetime
 
+# ── Patch StringDtype so pickles from any pandas version can load ──
+_original_init = pd.StringDtype.__init__
+def _patched_init(self, *args, **kwargs):
+    try:
+        _original_init(self, *args, **kwargs)
+    except TypeError:
+        # Older/newer pandas doesn't accept na_value positional arg;
+        # fall back to storage-only init
+        _original_init(self, args[0] if args else "python")
+pd.StringDtype.__init__ = _patched_init
+
 with open('model/alberta_model.pkl', 'rb') as f:
     model = pickle.load(f)
+
+# Restore original to avoid side-effects
+pd.StringDtype.__init__ = _original_init
 
 # Get fresh weather forecast
 url = 'https://api.open-meteo.com/v1/forecast'
