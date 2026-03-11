@@ -1,5 +1,5 @@
 prophet>=1.1,<2.0
-pandas>=2.0,<2.2
+pandas>=2.1,<2.2
 numpy>=1.21,<2.0
 requests
 scikit-learn
