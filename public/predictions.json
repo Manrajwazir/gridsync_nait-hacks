@@ -1,437 +1,437 @@
 {
-  "generated_at": "2026-03-21T06:38:36.048344",
+  "generated_at": "2026-03-22T06:46:37.468858",
   "predictions": [
     {
-      "timestamp": "2026-03-21T06:00:00",
-      "predicted_mw": 8417,
-      "lower_bound": 7882,
-      "upper_bound": 8945,
-      "capacity_pct": 64.7,
-      "risk_level": "safe",
-      "temperature_c": -6.6
-    },
-    {
-      "timestamp": "2026-03-21T07:00:00",
-      "predicted_mw": 8594,
-      "lower_bound": 8082,
-      "upper_bound": 9098,
-      "capacity_pct": 66.1,
-      "risk_level": "safe",
-      "temperature_c": -7.0
-    },
-    {
-      "timestamp": "2026-03-21T08:00:00",
-      "predicted_mw": 8758,
-      "lower_bound": 8213,
-      "upper_bound": 9342,
-      "capacity_pct": 67.4,
-      "risk_level": "safe",
-      "temperature_c": -7.3
-    },
-    {
-      "timestamp": "2026-03-21T09:00:00",
-      "predicted_mw": 8874,
-      "lower_bound": 8351,
-      "upper_bound": 9390,
-      "capacity_pct": 68.3,
-      "risk_level": "safe",
-      "temperature_c": -7.2
-    },
-    {
-      "timestamp": "2026-03-21T10:00:00",
-      "predicted_mw": 8926,
-      "lower_bound": 8449,
-      "upper_bound": 9430,
-      "capacity_pct": 68.7,
-      "risk_level": "safe",
-      "temperature_c": -6.1
-    },
-    {
-      "timestamp": "2026-03-21T11:00:00",
-      "predicted_mw": 8937,
-      "lower_bound": 8432,
-      "upper_bound": 9482,
-      "capacity_pct": 68.7,
-      "risk_level": "safe",
-      "temperature_c": -4.7
-    },
-    {
-      "timestamp": "2026-03-21T12:00:00",
-      "predicted_mw": 8935,
-      "lower_bound": 8422,
-      "upper_bound": 9461,
-      "capacity_pct": 68.7,
-      "risk_level": "safe",
-      "temperature_c": -3.2
-    },
-    {
-      "timestamp": "2026-03-21T13:00:00",
-      "predicted_mw": 8947,
-      "lower_bound": 8453,
-      "upper_bound": 9469,
-      "capacity_pct": 68.8,
-      "risk_level": "safe",
-      "temperature_c": -2.2
-    },
-    {
-      "timestamp": "2026-03-21T14:00:00",
-      "predicted_mw": 8971,
-      "lower_bound": 8443,
-      "upper_bound": 9535,
-      "capacity_pct": 69.0,
-      "risk_level": "safe",
-      "temperature_c": -1.4
-    },
-    {
-      "timestamp": "2026-03-21T15:00:00",
-      "predicted_mw": 8996,
-      "lower_bound": 8485,
-      "upper_bound": 9516,
-      "capacity_pct": 69.2,
-      "risk_level": "safe",
-      "temperature_c": -0.7
-    },
-    {
-      "timestamp": "2026-03-21T16:00:00",
-      "predicted_mw": 9010,
-      "lower_bound": 8434,
-      "upper_bound": 9554,
-      "capacity_pct": 69.3,
-      "risk_level": "safe",
-      "temperature_c": -0.1
-    },
-    {
-      "timestamp": "2026-03-21T17:00:00",
-      "predicted_mw": 9005,
-      "lower_bound": 8533,
-      "upper_bound": 9563,
-      "capacity_pct": 69.3,
-      "risk_level": "safe",
-      "temperature_c": 0.2
-    },
-    {
-      "timestamp": "2026-03-21T18:00:00",
-      "predicted_mw": 8977,
-      "lower_bound": 8408,
-      "upper_bound": 9521,
-      "capacity_pct": 69.1,
-      "risk_level": "safe",
-      "temperature_c": 0.2
-    },
-    {
-      "timestamp": "2026-03-21T19:00:00",
-      "predicted_mw": 8921,
-      "lower_bound": 8347,
-      "upper_bound": 9468,
-      "capacity_pct": 68.6,
-      "risk_level": "safe",
-      "temperature_c": -0.3
-    },
-    {
-      "timestamp": "2026-03-21T20:00:00",
-      "predicted_mw": 8830,
-      "lower_bound": 8299,
-      "upper_bound": 9386,
-      "capacity_pct": 67.9,
-      "risk_level": "safe",
-      "temperature_c": -1.2
-    },
-    {
-      "timestamp": "2026-03-21T21:00:00",
-      "predicted_mw": 8701,
-      "lower_bound": 8158,
-      "upper_bound": 9217,
-      "capacity_pct": 66.9,
-      "risk_level": "safe",
-      "temperature_c": -2.3
-    },
-    {
-      "timestamp": "2026-03-21T22:00:00",
-      "predicted_mw": 8545,
-      "lower_bound": 7991,
-      "upper_bound": 9052,
-      "capacity_pct": 65.7,
-      "risk_level": "safe",
-      "temperature_c": -3.4
-    },
-    {
-      "timestamp": "2026-03-21T23:00:00",
-      "predicted_mw": 8380,
-      "lower_bound": 7821,
-      "upper_bound": 8910,
-      "capacity_pct": 64.5,
-      "risk_level": "safe",
-      "temperature_c": -4.3
-    },
-    {
-      "timestamp": "2026-03-22T00:00:00",
-      "predicted_mw": 8232,
-      "lower_bound": 7693,
-      "upper_bound": 8778,
-      "capacity_pct": 63.3,
-      "risk_level": "safe",
-      "temperature_c": -5.1
-    },
-    {
-      "timestamp": "2026-03-22T01:00:00",
-      "predicted_mw": 8118,
-      "lower_bound": 7582,
-      "upper_bound": 8633,
-      "capacity_pct": 62.4,
-      "risk_level": "safe",
-      "temperature_c": -6.1
-    },
-    {
-      "timestamp": "2026-03-22T02:00:00",
-      "predicted_mw": 8045,
-      "lower_bound": 7489,
-      "upper_bound": 8578,
-      "capacity_pct": 61.9,
-      "risk_level": "safe",
-      "temperature_c": -6.9
-    },
-    {
-      "timestamp": "2026-03-22T03:00:00",
-      "predicted_mw": 8020,
-      "lower_bound": 7476,
-      "upper_bound": 8539,
-      "capacity_pct": 61.7,
-      "risk_level": "safe",
-      "temperature_c": -7.5
-    },
-    {
-      "timestamp": "2026-03-22T04:00:00",
-      "predicted_mw": 8053,
-      "lower_bound": 7482,
-      "upper_bound": 8603,
-      "capacity_pct": 61.9,
-      "risk_level": "safe",
-      "temperature_c": -7.8
-    },
-    {
-      "timestamp": "2026-03-22T05:00:00",
-      "predicted_mw": 8150,
-      "lower_bound": 7623,
-      "upper_bound": 8696,
-      "capacity_pct": 62.7,
-      "risk_level": "safe",
-      "temperature_c": -8.0
-    },
-    {
       "timestamp": "2026-03-22T06:00:00",
-      "predicted_mw": 8306,
-      "lower_bound": 7758,
-      "upper_bound": 8838,
+      "predicted_mw": 8307,
+      "lower_bound": 7788,
+      "upper_bound": 8815,
       "capacity_pct": 63.9,
       "risk_level": "safe",
-      "temperature_c": -8.2
+      "temperature_c": -8.3
     },
     {
       "timestamp": "2026-03-22T07:00:00",
-      "predicted_mw": 8491,
-      "lower_bound": 7954,
-      "upper_bound": 9021,
+      "predicted_mw": 8490,
+      "lower_bound": 7968,
+      "upper_bound": 8995,
       "capacity_pct": 65.3,
       "risk_level": "safe",
-      "temperature_c": -8.5
+      "temperature_c": -8.4
     },
     {
       "timestamp": "2026-03-22T08:00:00",
-      "predicted_mw": 8662,
-      "lower_bound": 8097,
-      "upper_bound": 9223,
+      "predicted_mw": 8663,
+      "lower_bound": 8105,
+      "upper_bound": 9207,
       "capacity_pct": 66.6,
       "risk_level": "safe",
-      "temperature_c": -8.5
+      "temperature_c": -8.6
     },
     {
       "timestamp": "2026-03-22T09:00:00",
-      "predicted_mw": 8782,
-      "lower_bound": 8216,
-      "upper_bound": 9321,
+      "predicted_mw": 8785,
+      "lower_bound": 8231,
+      "upper_bound": 9336,
       "capacity_pct": 67.6,
       "risk_level": "safe",
-      "temperature_c": -7.8
+      "temperature_c": -8.1
     },
     {
       "timestamp": "2026-03-22T10:00:00",
-      "predicted_mw": 8836,
-      "lower_bound": 8308,
-      "upper_bound": 9395,
+      "predicted_mw": 8840,
+      "lower_bound": 8307,
+      "upper_bound": 9352,
       "capacity_pct": 68.0,
       "risk_level": "safe",
-      "temperature_c": -5.8
+      "temperature_c": -6.2
     },
     {
       "timestamp": "2026-03-22T11:00:00",
-      "predicted_mw": 8851,
-      "lower_bound": 8300,
-      "upper_bound": 9394,
+      "predicted_mw": 8855,
+      "lower_bound": 8306,
+      "upper_bound": 9408,
       "capacity_pct": 68.1,
       "risk_level": "safe",
-      "temperature_c": -3.6
+      "temperature_c": -4.0
     },
     {
       "timestamp": "2026-03-22T12:00:00",
-      "predicted_mw": 8857,
-      "lower_bound": 8259,
-      "upper_bound": 9423,
-      "capacity_pct": 68.1,
+      "predicted_mw": 8860,
+      "lower_bound": 8303,
+      "upper_bound": 9372,
+      "capacity_pct": 68.2,
       "risk_level": "safe",
-      "temperature_c": -1.7
+      "temperature_c": -2.0
     },
     {
       "timestamp": "2026-03-22T13:00:00",
-      "predicted_mw": 8881,
-      "lower_bound": 8359,
-      "upper_bound": 9461,
+      "predicted_mw": 8884,
+      "lower_bound": 8380,
+      "upper_bound": 9439,
       "capacity_pct": 68.3,
       "risk_level": "safe",
-      "temperature_c": -0.8
+      "temperature_c": -1.1
     },
     {
       "timestamp": "2026-03-22T14:00:00",
-      "predicted_mw": 8916,
-      "lower_bound": 8365,
-      "upper_bound": 9489,
+      "predicted_mw": 8922,
+      "lower_bound": 8390,
+      "upper_bound": 9439,
       "capacity_pct": 68.6,
+      "risk_level": "safe",
+      "temperature_c": -0.5
+    },
+    {
+      "timestamp": "2026-03-22T15:00:00",
+      "predicted_mw": 8960,
+      "lower_bound": 8413,
+      "upper_bound": 9489,
+      "capacity_pct": 68.9,
       "risk_level": "safe",
       "temperature_c": 0.1
     },
     {
-      "timestamp": "2026-03-22T15:00:00",
-      "predicted_mw": 8949,
-      "lower_bound": 8396,
-      "upper_bound": 9480,
-      "capacity_pct": 68.8,
-      "risk_level": "safe",
-      "temperature_c": 1.2
-    },
-    {
       "timestamp": "2026-03-22T16:00:00",
-      "predicted_mw": 8981,
-      "lower_bound": 8446,
-      "upper_bound": 9541,
+      "predicted_mw": 8987,
+      "lower_bound": 8441,
+      "upper_bound": 9517,
       "capacity_pct": 69.1,
       "risk_level": "safe",
-      "temperature_c": 1.2
+      "temperature_c": 0.5
     },
     {
       "timestamp": "2026-03-22T17:00:00",
-      "predicted_mw": 8992,
-      "lower_bound": 8451,
-      "upper_bound": 9546,
+      "predicted_mw": 8994,
+      "lower_bound": 8472,
+      "upper_bound": 9507,
       "capacity_pct": 69.2,
       "risk_level": "safe",
-      "temperature_c": 1.1
+      "temperature_c": 0.9
     },
     {
       "timestamp": "2026-03-22T18:00:00",
       "predicted_mw": 8976,
-      "lower_bound": 8417,
-      "upper_bound": 9508,
+      "lower_bound": 8387,
+      "upper_bound": 9528,
       "capacity_pct": 69.0,
       "risk_level": "safe",
       "temperature_c": 1.0
     },
     {
       "timestamp": "2026-03-22T19:00:00",
-      "predicted_mw": 8936,
-      "lower_bound": 8416,
-      "upper_bound": 9471,
+      "predicted_mw": 8931,
+      "lower_bound": 8395,
+      "upper_bound": 9501,
       "capacity_pct": 68.7,
       "risk_level": "safe",
-      "temperature_c": 0.0
+      "temperature_c": 0.5
     },
     {
       "timestamp": "2026-03-22T20:00:00",
-      "predicted_mw": 8859,
-      "lower_bound": 8333,
-      "upper_bound": 9381,
+      "predicted_mw": 8853,
+      "lower_bound": 8351,
+      "upper_bound": 9443,
       "capacity_pct": 68.1,
       "risk_level": "safe",
-      "temperature_c": -1.3
+      "temperature_c": -0.7
     },
     {
       "timestamp": "2026-03-22T21:00:00",
-      "predicted_mw": 8743,
-      "lower_bound": 8173,
-      "upper_bound": 9273,
-      "capacity_pct": 67.3,
+      "predicted_mw": 8731,
+      "lower_bound": 8210,
+      "upper_bound": 9237,
+      "capacity_pct": 67.2,
       "risk_level": "safe",
-      "temperature_c": -2.6
+      "temperature_c": -1.4
     },
     {
       "timestamp": "2026-03-22T22:00:00",
-      "predicted_mw": 8602,
-      "lower_bound": 8056,
-      "upper_bound": 9150,
-      "capacity_pct": 66.2,
+      "predicted_mw": 8589,
+      "lower_bound": 8072,
+      "upper_bound": 9119,
+      "capacity_pct": 66.1,
       "risk_level": "safe",
-      "temperature_c": -4.3
+      "temperature_c": -2.9
     },
     {
       "timestamp": "2026-03-22T23:00:00",
-      "predicted_mw": 8447,
-      "lower_bound": 7893,
-      "upper_bound": 8968,
-      "capacity_pct": 65.0,
+      "predicted_mw": 8435,
+      "lower_bound": 7907,
+      "upper_bound": 8982,
+      "capacity_pct": 64.9,
       "risk_level": "safe",
-      "temperature_c": -5.1
+      "temperature_c": -3.9
     },
     {
       "timestamp": "2026-03-23T00:00:00",
-      "predicted_mw": 8365,
-      "lower_bound": 7808,
-      "upper_bound": 8916,
+      "predicted_mw": 8356,
+      "lower_bound": 7814,
+      "upper_bound": 8864,
       "capacity_pct": 64.3,
       "risk_level": "safe",
-      "temperature_c": -5.6
+      "temperature_c": -4.7
     },
     {
       "timestamp": "2026-03-23T01:00:00",
-      "predicted_mw": 8252,
-      "lower_bound": 7745,
-      "upper_bound": 8776,
-      "capacity_pct": 63.5,
+      "predicted_mw": 8245,
+      "lower_bound": 7702,
+      "upper_bound": 8774,
+      "capacity_pct": 63.4,
       "risk_level": "safe",
-      "temperature_c": -5.9
+      "temperature_c": -5.2
     },
     {
       "timestamp": "2026-03-23T02:00:00",
-      "predicted_mw": 8184,
-      "lower_bound": 7659,
-      "upper_bound": 8736,
+      "predicted_mw": 8175,
+      "lower_bound": 7645,
+      "upper_bound": 8698,
+      "capacity_pct": 62.9,
+      "risk_level": "safe",
+      "temperature_c": -5.7
+    },
+    {
+      "timestamp": "2026-03-23T03:00:00",
+      "predicted_mw": 8155,
+      "lower_bound": 7601,
+      "upper_bound": 8668,
+      "capacity_pct": 62.7,
+      "risk_level": "safe",
+      "temperature_c": -6.2
+    },
+    {
+      "timestamp": "2026-03-23T04:00:00",
+      "predicted_mw": 8194,
+      "lower_bound": 7654,
+      "upper_bound": 8710,
       "capacity_pct": 63.0,
       "risk_level": "safe",
       "temperature_c": -6.6
     },
     {
-      "timestamp": "2026-03-23T03:00:00",
-      "predicted_mw": 8167,
-      "lower_bound": 7638,
-      "upper_bound": 8718,
-      "capacity_pct": 62.8,
-      "risk_level": "safe",
-      "temperature_c": -7.4
-    },
-    {
-      "timestamp": "2026-03-23T04:00:00",
-      "predicted_mw": 8198,
-      "lower_bound": 7654,
-      "upper_bound": 8750,
-      "capacity_pct": 63.1,
+      "timestamp": "2026-03-23T05:00:00",
+      "predicted_mw": 8298,
+      "lower_bound": 7773,
+      "upper_bound": 8825,
+      "capacity_pct": 63.8,
       "risk_level": "safe",
       "temperature_c": -7.1
     },
     {
-      "timestamp": "2026-03-23T05:00:00",
-      "predicted_mw": 8297,
-      "lower_bound": 7760,
-      "upper_bound": 8814,
+      "timestamp": "2026-03-23T06:00:00",
+      "predicted_mw": 8462,
+      "lower_bound": 7949,
+      "upper_bound": 9013,
+      "capacity_pct": 65.1,
+      "risk_level": "safe",
+      "temperature_c": -7.9
+    },
+    {
+      "timestamp": "2026-03-23T07:00:00",
+      "predicted_mw": 8654,
+      "lower_bound": 8122,
+      "upper_bound": 9159,
+      "capacity_pct": 66.6,
+      "risk_level": "safe",
+      "temperature_c": -8.8
+    },
+    {
+      "timestamp": "2026-03-23T08:00:00",
+      "predicted_mw": 8831,
+      "lower_bound": 8316,
+      "upper_bound": 9370,
+      "capacity_pct": 67.9,
+      "risk_level": "safe",
+      "temperature_c": -9.3
+    },
+    {
+      "timestamp": "2026-03-23T09:00:00",
+      "predicted_mw": 8955,
+      "lower_bound": 8453,
+      "upper_bound": 9499,
+      "capacity_pct": 68.9,
+      "risk_level": "safe",
+      "temperature_c": -8.9
+    },
+    {
+      "timestamp": "2026-03-23T10:00:00",
+      "predicted_mw": 9004,
+      "lower_bound": 8502,
+      "upper_bound": 9574,
+      "capacity_pct": 69.3,
+      "risk_level": "safe",
+      "temperature_c": -6.5
+    },
+    {
+      "timestamp": "2026-03-23T11:00:00",
+      "predicted_mw": 9016,
+      "lower_bound": 8479,
+      "upper_bound": 9555,
+      "capacity_pct": 69.4,
+      "risk_level": "safe",
+      "temperature_c": -4.2
+    },
+    {
+      "timestamp": "2026-03-23T12:00:00",
+      "predicted_mw": 9020,
+      "lower_bound": 8501,
+      "upper_bound": 9526,
+      "capacity_pct": 69.4,
+      "risk_level": "safe",
+      "temperature_c": -2.2
+    },
+    {
+      "timestamp": "2026-03-23T13:00:00",
+      "predicted_mw": 9034,
+      "lower_bound": 8519,
+      "upper_bound": 9607,
+      "capacity_pct": 69.5,
+      "risk_level": "safe",
+      "temperature_c": -0.6
+    },
+    {
+      "timestamp": "2026-03-23T14:00:00",
+      "predicted_mw": 9064,
+      "lower_bound": 8490,
+      "upper_bound": 9583,
+      "capacity_pct": 69.7,
+      "risk_level": "safe",
+      "temperature_c": 0.5
+    },
+    {
+      "timestamp": "2026-03-23T15:00:00",
+      "predicted_mw": 9097,
+      "lower_bound": 8540,
+      "upper_bound": 9599,
+      "capacity_pct": 70.0,
+      "risk_level": "safe",
+      "temperature_c": 1.1
+    },
+    {
+      "timestamp": "2026-03-23T16:00:00",
+      "predicted_mw": 9118,
+      "lower_bound": 8583,
+      "upper_bound": 9645,
+      "capacity_pct": 70.1,
+      "risk_level": "safe",
+      "temperature_c": 1.7
+    },
+    {
+      "timestamp": "2026-03-23T17:00:00",
+      "predicted_mw": 9120,
+      "lower_bound": 8578,
+      "upper_bound": 9643,
+      "capacity_pct": 70.2,
+      "risk_level": "safe",
+      "temperature_c": 2.0
+    },
+    {
+      "timestamp": "2026-03-23T18:00:00",
+      "predicted_mw": 9102,
+      "lower_bound": 8575,
+      "upper_bound": 9607,
+      "capacity_pct": 70.0,
+      "risk_level": "safe",
+      "temperature_c": 1.6
+    },
+    {
+      "timestamp": "2026-03-23T19:00:00",
+      "predicted_mw": 9054,
+      "lower_bound": 8544,
+      "upper_bound": 9560,
+      "capacity_pct": 69.6,
+      "risk_level": "safe",
+      "temperature_c": 0.8
+    },
+    {
+      "timestamp": "2026-03-23T20:00:00",
+      "predicted_mw": 8970,
+      "lower_bound": 8451,
+      "upper_bound": 9490,
+      "capacity_pct": 69.0,
+      "risk_level": "safe",
+      "temperature_c": -0.4
+    },
+    {
+      "timestamp": "2026-03-23T21:00:00",
+      "predicted_mw": 8835,
+      "lower_bound": 8311,
+      "upper_bound": 9386,
+      "capacity_pct": 68.0,
+      "risk_level": "safe",
+      "temperature_c": -0.5
+    },
+    {
+      "timestamp": "2026-03-23T22:00:00",
+      "predicted_mw": 8683,
+      "lower_bound": 8124,
+      "upper_bound": 9217,
+      "capacity_pct": 66.8,
+      "risk_level": "safe",
+      "temperature_c": -1.6
+    },
+    {
+      "timestamp": "2026-03-23T23:00:00",
+      "predicted_mw": 8515,
+      "lower_bound": 7997,
+      "upper_bound": 9037,
+      "capacity_pct": 65.5,
+      "risk_level": "safe",
+      "temperature_c": -1.9
+    },
+    {
+      "timestamp": "2026-03-24T00:00:00",
+      "predicted_mw": 8363,
+      "lower_bound": 7826,
+      "upper_bound": 8902,
+      "capacity_pct": 64.3,
+      "risk_level": "safe",
+      "temperature_c": -2.1
+    },
+    {
+      "timestamp": "2026-03-24T01:00:00",
+      "predicted_mw": 8248,
+      "lower_bound": 7691,
+      "upper_bound": 8840,
+      "capacity_pct": 63.4,
+      "risk_level": "safe",
+      "temperature_c": -2.9
+    },
+    {
+      "timestamp": "2026-03-24T02:00:00",
+      "predicted_mw": 8178,
+      "lower_bound": 7627,
+      "upper_bound": 8735,
+      "capacity_pct": 62.9,
+      "risk_level": "safe",
+      "temperature_c": -4.0
+    },
+    {
+      "timestamp": "2026-03-24T03:00:00",
+      "predicted_mw": 8159,
+      "lower_bound": 7622,
+      "upper_bound": 8714,
+      "capacity_pct": 62.8,
+      "risk_level": "safe",
+      "temperature_c": -5.3
+    },
+    {
+      "timestamp": "2026-03-24T04:00:00",
+      "predicted_mw": 8196,
+      "lower_bound": 7694,
+      "upper_bound": 8718,
+      "capacity_pct": 63.0,
+      "risk_level": "safe",
+      "temperature_c": -6.3
+    },
+    {
+      "timestamp": "2026-03-24T05:00:00",
+      "predicted_mw": 8298,
+      "lower_bound": 7773,
+      "upper_bound": 8847,
       "capacity_pct": 63.8,
       "risk_level": "safe",
-      "temperature_c": -7.0
+      "temperature_c": -7.3
     }
   ]
 }
