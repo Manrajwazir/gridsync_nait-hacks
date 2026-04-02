@@ -1,8 +1,49 @@
 import pickle, json, requests, pandas as pd
 from datetime import datetime
 
-with open('model/alberta_model.pkl', 'rb') as f:
-    model = pickle.load(f)
+# ── Load model (retrain from CSV if pickle is incompatible) ──
+try:
+    with open('model/alberta_model.pkl', 'rb') as f:
+        model = pickle.load(f)
+    print("✅ Model loaded from pickle")
+except Exception as e:
+    print(f"⚠️  Pickle load failed: {e}")
+    print("   Retraining from CSV data (one-time fix, ~10-20 min)...")
+
+    from prophet import Prophet
+
+    grid    = pd.read_csv('model/grid_clean.csv')
+    weather = pd.read_csv('model/weather_clean.csv')
+
+    grid['timestamp']    = pd.to_datetime(grid['timestamp']).dt.floor('h')
+    weather['timestamp'] = pd.to_datetime(weather['timestamp']).dt.floor('h')
+
+    df = pd.merge(grid, weather, on='timestamp', how='inner')
+    df = df.rename(columns={'timestamp': 'ds', 'usage_mw': 'y'})
+    df['is_weekend'] = (df['ds'].dt.dayofweek >= 5).astype(int)
+    df = df.dropna()
+
+    print(f"   Training on {len(df)} rows...")
+
+    model = Prophet(
+        changepoint_prior_scale=0.05,
+        seasonality_mode='multiplicative',
+        yearly_seasonality=True,
+        weekly_seasonality=True,
+        daily_seasonality=True,
+        interval_width=0.95,
+    )
+    model.add_regressor('temperature_c', standardize=True)
+    model.add_regressor('is_weekend',    standardize=False)
+
+    start = datetime.now()
+    model.fit(df)
+    print(f"   ✅ Retrained in {(datetime.now()-start).seconds}s")
+
+    # Save compatible pickle so future runs load instantly
+    with open('model/alberta_model.pkl', 'wb') as f:
+        pickle.dump(model, f)
+    print("   💾 New pickle saved — future runs will be fast")
 
 # Get fresh weather forecast
 url = 'https://api.open-meteo.com/v1/forecast'

@@ -65,7 +65,7 @@ gridsync/
 ---
 
 ## Built For
-**HACKED 2025** — University of Alberta.
+**Built For HACKED 2026* — University of Alberta. Top 5 Finalist.
 
 *GridSync: Because a smarter grid starts with a more informed community.*
 
