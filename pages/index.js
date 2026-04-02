@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import EnergyMixChart from '../components/EnergyMixChart'
 
 /*
  * Landing Page — GridSync B2G pitch
@@ -255,7 +256,7 @@ export default function Landing() {
           </div>
 
           {/* Stats strip */}
-          <div className="stat-strip" style={{ display:'flex', justifyContent:'center', gap:'56px', marginTop:'80px', flexWrap:'wrap' }}>
+          <div className="stat-strip" style={{ display:'flex', justifyContent:'center', gap:'56px', marginTop:'80px', flexWrap:'wrap', marginBottom: '60px' }}>
             {[
               { value:'48h',         label:'Demand Forecast Window' },
               { value:'94.2%',       label:'Prediction Accuracy' },
@@ -267,6 +268,11 @@ export default function Landing() {
                 <div style={{ fontSize:'11px', color:'#555', marginTop:'5px' }}>{s.label}</div>
               </div>
             ))}
+          </div>
+
+          {/* Compact Energy Mix */}
+          <div style={{ maxWidth: '600px', margin: '0 auto', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '16px', padding: '20px' }}>
+            <EnergyMixChart />
           </div>
         </section>
 

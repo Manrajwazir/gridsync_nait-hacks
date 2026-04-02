@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import GridStatus from '../../components/GridStatus'
 import DemandGauge from '../../components/DemandGauge'
-import GridSchematic from '../../components/GridSchematic'
+import EnergyMixChart from '../../components/EnergyMixChart'
 import { supabase } from '../../lib/supabase'
 
 // Leaflet needs the browser window object — disable SSR
@@ -16,6 +16,7 @@ const AlbertaMap = dynamic(() => import('../../components/AlbertaMap'), { ssr: f
 export default function OperatorDashboard() {
   const [accuracy, setAccuracy] = useState(null)
   const [liveStats, setLiveStats] = useState(null)
+  const [renewablesPct, setRenewablesPct] = useState(null)
   const [jitteredUsers, setJitteredUsers] = useState(12847)
   const [jitteredSaved, setJitteredSaved] = useState(16.5)
   const [alertCount, setAlertCount] = useState(0)
@@ -36,6 +37,14 @@ export default function OperatorDashboard() {
     fetch('/accuracy.json')
       .then(r => r.json())
       .then(d => setAccuracy(d))
+      .catch(() => {})
+  }, [])
+
+  // Fetch renewables % from energy-mix API
+  useEffect(() => {
+    fetch('/api/energy-mix')
+      .then(r => r.json())
+      .then(d => setRenewablesPct(d.renewables_pct ?? null))
       .catch(() => {})
   }, [])
 
@@ -60,11 +69,7 @@ export default function OperatorDashboard() {
     : '--'
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh' }}>
-      {/* Alberta transmission network — subtle background */}
-      <GridSchematic opacity={0.08} glow={true} />
-
-      <div style={{ position: 'relative', zIndex: 1, padding: '32px 40px' }}>
+    <div style={{ padding: '32px 40px' }}>
       {/* Header */}
       <div style={{ marginBottom: '24px' }}>
         <h1 style={{
@@ -108,6 +113,7 @@ export default function OperatorDashboard() {
           { label: 'MW Demand Avoided',  value: jitteredSaved, change: '+1.8 MW', up: true },
           { label: 'Alerts Sent', value: alertCount, change: 'Last 24h', up: null },
           { label: 'Model Accuracy', value: headlineAccuracy, change: 'From accuracy.json', up: null },
+          { label: 'Renewables', value: renewablesPct != null ? `${renewablesPct}%` : '--', change: 'Live generation mix', up: renewablesPct >= 20 ? true : null },
         ].map((stat, i) => (
           <div key={i} style={{
             background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.06)',
@@ -131,6 +137,14 @@ export default function OperatorDashboard() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Energy Mix — full width panel */}
+      <div style={{
+        background: '#0a0a0a', border: '1px solid rgba(255,255,255,0.06)',
+        borderRadius: '12px', padding: '20px 24px', marginBottom: '24px',
+      }}>
+        <EnergyMixChart />
       </div>
 
       {/* Two-column layout: chart left, map + gauge right */}
@@ -164,7 +178,6 @@ export default function OperatorDashboard() {
             />
           </div>
         </div>
-      </div>
       </div>
     </div>
   )
