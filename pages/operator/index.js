@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import GridStatus from '../../components/GridStatus'
 import DemandGauge from '../../components/DemandGauge'
+import GridSchematic from '../../components/GridSchematic'
 import { supabase } from '../../lib/supabase'
 
 // Leaflet needs the browser window object — disable SSR
@@ -59,9 +60,13 @@ export default function OperatorDashboard() {
     : '--'
 
   return (
-    <div style={{ padding: '32px 40px' }}>
+    <div style={{ position: 'relative', minHeight: '100vh' }}>
+      {/* Alberta transmission network — subtle background */}
+      <GridSchematic opacity={0.08} glow={true} />
+
+      <div style={{ position: 'relative', zIndex: 1, padding: '32px 40px' }}>
       {/* Header */}
-      <div style={{ marginBottom: '32px' }}>
+      <div style={{ marginBottom: '24px' }}>
         <h1 style={{
           fontSize: '24px', fontWeight: '700', color: '#ededed',
           margin: 0, letterSpacing: '-0.5px',
@@ -69,8 +74,28 @@ export default function OperatorDashboard() {
           Grid Overview
         </h1>
         <p style={{ fontSize: '13px', color: '#555', margin: '6px 0 0' }}>
-          Real-time Alberta grid status and demand forecast
+          Real-time Alberta grid status, demand forecast, and response coordination
         </p>
+      </div>
+
+      {/* Mission banner */}
+      <div style={{
+        background: 'rgba(0,112,243,0.05)',
+        border: '1px solid rgba(0,112,243,0.12)',
+        borderRadius: '10px', padding: '14px 20px',
+        marginBottom: '28px',
+        display: 'flex', alignItems: 'center', gap: '14px',
+      }}>
+        <span style={{ fontSize: '22px', flexShrink: 0 }}>⚡</span>
+        <div>
+          <div style={{ fontSize: '13px', fontWeight: '600', color: '#4d94ff', marginBottom: '2px' }}>
+            GridSync Intelligence Dashboard
+          </div>
+          <div style={{ fontSize: '12px', color: '#555', lineHeight: 1.6 }}>
+            Monitor Alberta&apos;s real-time grid load, review the 48-hour AI forecast, and coordinate
+            province-wide demand response alerts — before stress materializes.
+          </div>
+        </div>
       </div>
 
       {/* Quick stats row */}
@@ -79,8 +104,8 @@ export default function OperatorDashboard() {
         gap: '16px', marginBottom: '28px',
       }}>
         {[
-          { label: 'Active Users', value: jitteredUsers.toLocaleString(), change: '+3.2%', up: true },
-          { label: 'MW Saved Today', value: jitteredSaved, change: '+1.8 MW', up: true },
+          { label: 'Active Subscribers', value: jitteredUsers.toLocaleString(), change: '+3.2%', up: true },
+          { label: 'MW Demand Avoided',  value: jitteredSaved, change: '+1.8 MW', up: true },
           { label: 'Alerts Sent', value: alertCount, change: 'Last 24h', up: null },
           { label: 'Model Accuracy', value: headlineAccuracy, change: 'From accuracy.json', up: null },
         ].map((stat, i) => (
@@ -139,6 +164,7 @@ export default function OperatorDashboard() {
             />
           </div>
         </div>
+      </div>
       </div>
     </div>
   )

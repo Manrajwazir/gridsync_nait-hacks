@@ -4,13 +4,13 @@ import HomeRoundedIcon from '@mui/icons-material/HomeRounded'
 import PersonRoundedIcon from '@mui/icons-material/PersonRounded'
 
 /*
- * ConsumerNav — Bottom tab bar for citizens
- * 2 tabs: Home and Profile. Uses Material UI icons.
+ * ConsumerNav — Bottom tab bar for the Subscriber Portal
+ * 2 tabs: Portal (home) and Profile. Uses Material UI icons.
  */
 
 const tabs = [
-  { href: '/', label: 'Home',    Icon: HomeRoundedIcon },
-  { href: '/profile', label: 'Profile', Icon: PersonRoundedIcon },
+  { href: '/dashboard', label: 'Portal',  Icon: HomeRoundedIcon },
+  { href: '/profile',   label: 'Profile', Icon: PersonRoundedIcon },
 ]
 
 export default function ConsumerNav() {
