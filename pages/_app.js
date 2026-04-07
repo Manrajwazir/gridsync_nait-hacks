@@ -7,10 +7,11 @@ import { useEffect } from 'react'
 
 /*
  * _app.js — Layout switcher + auth gate
- * 
- * /login          → no nav, bare login page
- * /operator/*     → requires auth + operator role, sidebar layout
- * everything else → consumer layout with bottom tabs (no auth required to view)
+ *
+ * /              → no nav, standalone landing page
+ * /login         → no nav, bare login page
+ * /operator/*    → requires auth + operator role, sidebar layout
+ * /dashboard, /profile, etc. → subscriber layout with bottom tabs (no auth required)
  */
 
 function MyApp({ Component, pageProps }) {
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps }) {
   const { user, role, loading } = useUser()
   const isOperator = router.pathname.startsWith('/operator')
   const isLoginPage = router.pathname === '/login'
+  const isLandingPage = router.pathname === '/'
 
   // Redirect to login if trying to access /operator without auth
   useEffect(() => {
@@ -26,15 +28,10 @@ function MyApp({ Component, pageProps }) {
     }
   }, [loading, isOperator, user])
 
-  // Redirect operators landing on / to /operator dashboard
-  useEffect(() => {
-    if (!loading && user && role === 'operator' && router.pathname === '/') {
-      router.push('/operator')
-    }
-  }, [loading, user, role, router.pathname])
+  // (Landing page is accessible to everyone — no redirect from /)
 
-  // ─── LOGIN PAGE: no nav ───
-  if (isLoginPage) {
+  // ─── LANDING + LOGIN: no nav ───
+  if (isLoginPage || isLandingPage) {
     return <Component {...pageProps} />
   }
 
@@ -85,7 +82,7 @@ function MyApp({ Component, pageProps }) {
           </div>
           <div style={{ display: 'flex', gap: '10px', marginTop: '8px' }}>
             <button
-              onClick={() => router.push('/')}
+              onClick={() => router.push('/dashboard')}
               style={{
                 padding: '8px 20px', background: 'rgba(255,255,255,0.06)',
                 color: '#888', border: '1px solid rgba(255,255,255,0.1)',
@@ -93,7 +90,7 @@ function MyApp({ Component, pageProps }) {
                 fontFamily: "'Inter', sans-serif",
               }}
             >
-              Consumer App
+              Subscriber Portal
             </button>
             <button
               onClick={async () => {
@@ -133,7 +130,7 @@ function MyApp({ Component, pageProps }) {
     )
   }
 
-  // ─── CONSUMER LAYOUT ───
+  // ─── SUBSCRIBER LAYOUT ───
   return (
     <div style={{
       minHeight: '100vh',

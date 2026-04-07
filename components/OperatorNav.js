@@ -73,29 +73,14 @@ export default function OperatorNav() {
       flexDirection: 'column',
       fontFamily: "'Inter', sans-serif",
     }}>
-      {/* Logo */}
-      <div style={{ padding: '28px 24px 32px' }}>
+      {/* Logo — links back to landing page */}
+      <Link href="/" style={{ padding: '28px 24px 32px', display: 'block', textDecoration: 'none' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <span style={{
-            fontSize: '17px',
-            fontWeight: '700',
-            color: '#ededed',
-            letterSpacing: '-0.3px',
-          }}>GridSync</span>
-          <span style={{
-            fontSize: '9px',
-            padding: '2px 7px',
-            background: 'rgba(0, 112, 243, 0.12)',
-            color: '#4d94ff',
-            borderRadius: '4px',
-            fontWeight: '700',
-            letterSpacing: '0.5px',
-          }}>OPERATOR</span>
+          <span style={{ fontSize: '17px', fontWeight: '700', color: '#ededed', letterSpacing: '-0.3px' }}>GridSync</span>
+          <span style={{ fontSize: '9px', padding: '2px 7px', background: 'rgba(0, 112, 243, 0.12)', color: '#4d94ff', borderRadius: '4px', fontWeight: '700', letterSpacing: '0.5px' }}>OPERATOR</span>
         </div>
-        <div style={{ fontSize: '11px', color: '#444', marginTop: '6px' }}>
-          Grid Management Console
-        </div>
-      </div>
+        <div style={{ fontSize: '11px', color: '#444', marginTop: '6px' }}>Grid Management Console</div>
+      </Link>
 
       {/* Section label */}
       <div style={{
@@ -165,20 +150,23 @@ export default function OperatorNav() {
         <div style={{ fontSize: '10px', color: '#444', textTransform: 'uppercase', letterSpacing: '0.8px', marginBottom: '8px' }}>
           Data Source
         </div>
-        <div style={{
-          display: 'flex', alignItems: 'center', gap: '8px',
-          fontSize: '12px', color: '#888',
-        }}>
-          <span style={{
-            width: '6px', height: '6px', borderRadius: '50%',
-            background: '#00c853',
-            boxShadow: '0 0 6px rgba(0, 200, 83, 0.4)',
-          }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', fontSize: '12px', color: '#888' }}>
+          <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#00c853', boxShadow: '0 0 6px rgba(0, 200, 83, 0.4)' }} />
           AESO Connected
         </div>
-        <div style={{ fontSize: '11px', color: '#333', marginTop: '4px' }}>
-          Live feed • 60s interval
-        </div>
+        <div style={{ fontSize: '11px', color: '#333', marginTop: '4px' }}>Live feed • 60s interval</div>
+
+        {/* Cross-portal link */}
+        <Link href="/dashboard" style={{
+          display: 'block', marginTop: '16px',
+          fontSize: '11px', color: '#333',
+          textDecoration: 'none', transition: 'color .2s',
+        }}
+          onMouseEnter={e => e.target.style.color = '#666'}
+          onMouseLeave={e => e.target.style.color = '#333'}
+        >
+          ← Subscriber Portal
+        </Link>
       </div>
     </nav>
   )
