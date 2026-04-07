@@ -5,10 +5,10 @@ const MAX_CAPACITY = 13000
  *
  * Uses the AESO Pool Price Report API which includes hourly
  * alberta_internal_load (AIL) data.
- *
- * Falls back to generating mock data anchored to the current live usage
- * if the API key is missing or the request fails.
  */
+
+const format = (d) => d.toISOString().split('T')[0]
+
 export default async function handler(req, res) {
   const apiKey = process.env.AESO_API_KEY
   const anchor = parseFloat(req.query.anchor) || 11200
@@ -99,7 +99,7 @@ export default async function handler(req, res) {
     res.status(200).json({
       data: generateFallbackData(anchor),
       is_mock: true,
-      error: e.message,
+      error: `Historical usage API error: ${e.message}`,
     })
   }
 }
