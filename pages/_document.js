@@ -11,7 +11,10 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <meta name="description" content="ML-powered platform that predicts Alberta grid stress and coordinates community action to prevent blackouts." />
+        <meta name="description" content="AI-powered 48-hour demand forecasting and demand response coordination for Alberta's grid operators — AESO, utilities, and municipalities." />
+        <meta property="og:title" content="GridSync — Alberta Grid Intelligence Platform" />
+        <meta property="og:description" content="AI-powered 48-hour demand forecasting and demand response coordination for Alberta's grid operators." />
+        <title>GridSync — Alberta Grid Intelligence Platform</title>
       </Head>
       <body style={{ backgroundColor: "#000" }}>
         <Main />

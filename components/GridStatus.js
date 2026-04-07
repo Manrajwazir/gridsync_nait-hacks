@@ -373,7 +373,7 @@ export default function GridStatus({ onReady }) {
             </span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <span style={{ display: 'inline-block', width: '16px', height: '8px', background: 'rgba(0,212,255,0.12)', border: '1px solid rgba(0,212,255,0.25)', borderRadius: '2px' }} />
-              <span style={{ color: '#555' }}>Confidence</span>
+              <span style={{ color: '#555' }}>95% Confidence Band</span>
             </span>
           </div>
         </div>

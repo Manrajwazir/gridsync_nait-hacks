@@ -151,28 +151,15 @@ export default function SubscriberPortal() {
         }
       `}</style>
 
-      <div style={{ position: 'relative', zIndex: 1, padding: '20px 24px 100px', maxWidth: '1100px', margin: '0 auto', fontFamily: "'Inter', sans-serif" }}>
+      <div style={{ position: 'relative', zIndex: 1, padding: '20px 24px 100px', paddingTop: '68px', maxWidth: '1100px', margin: '0 auto', fontFamily: "'Inter', sans-serif" }}>
 
       {/* ── Header ── */}
-      <div style={{ marginBottom: '24px', paddingTop: '8px', display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
-            <span style={{ fontSize: '20px', fontWeight: '700', color: '#ededed', letterSpacing: '-0.3px' }}>
-              GridSync
-            </span>
-            <span style={{
-              fontSize: '9px', padding: '2px 7px',
-              background: 'rgba(0,212,255,0.08)', color: '#00d4ff',
-              borderRadius: '4px', fontWeight: '700', letterSpacing: '0.5px',
-            }}>SUBSCRIBER PORTAL</span>
-          </div>
-          <p style={{ fontSize: '13px', color: '#555', margin: 0 }}>
-            Alberta grid — live status and demand response
-          </p>
+      <div style={{ marginBottom: '24px', paddingTop: '8px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
+          <Link href="/" style={{ fontSize: '20px', fontWeight: '700', color: '#ededed', letterSpacing: '-0.3px', textDecoration: 'none' }}>GridSync</Link>
+          <span style={{ fontSize: '9px', padding: '2px 7px', background: 'rgba(0,212,255,0.08)', color: '#00d4ff', borderRadius: '4px', fontWeight: '700', letterSpacing: '0.5px' }}>SUBSCRIBER PORTAL</span>
         </div>
-        <Link href="/login" className="op-signin-btn">
-          Operator Sign In →
-        </Link>
+        <p style={{ fontSize: '13px', color: '#555', margin: 0 }}>Alberta grid — live status and demand response</p>
       </div>
 
       {/* ── Real-time Alert Banner ── */}

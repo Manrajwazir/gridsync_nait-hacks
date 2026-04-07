@@ -1,7 +1,12 @@
 import pickle, json, requests, pandas as pd
 from datetime import datetime
+from pathlib import Path
 
-with open('model/alberta_model.pkl', 'rb') as f:
+# ── Absolute paths so script works from any CWD ──
+BASE  = Path(__file__).parent          # model/
+ROOT  = BASE.parent                    # project root
+
+with open(BASE / 'alberta_model.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Get fresh weather forecast
@@ -59,7 +64,8 @@ for i, row in forecast.iterrows():
         'temperature_c': round(temp, 1),
     })
 
-with open('public/predictions.json', 'w') as f:
+out_path = ROOT / 'public' / 'predictions.json'
+with open(out_path, 'w') as f:
     json.dump({'generated_at': datetime.now().isoformat(), 'predictions': results}, f, indent=2)
 
 print(f"✅ Done — {len(results)} predictions generated")
